@@ -1,5 +1,3 @@
-# Working Link :[Click here to view](https://youtu.be/4bJ27LP-5Zo?si=_8on_dngpIAN2IoJ)
-
 
 # SAFAR – BUS RESERVATION PORTAL (MERN)
 
@@ -115,9 +113,4 @@ Feel free to contribute to this project by submitting issues, feature requests, 
 
 
 
-
-
-## Contact
-
-For any questions or support, please contact [mauryaprabhakar677@gmail.com , dineshpadhi16@gmail.com].
 
