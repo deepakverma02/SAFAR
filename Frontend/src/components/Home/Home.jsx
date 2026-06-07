@@ -32,7 +32,7 @@ const BusBookingForm = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get('https://safar-bus-booking-system.onrender.com/displayReview');
+        const response = await axios.get('https://safar-backend-vazn.onrender.com/displayReview');
         if (response.data) {
           setReviews(response.data);
         } else {

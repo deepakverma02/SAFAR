@@ -5,7 +5,7 @@ import axios from 'axios';
 function TicketDetails() {
   const token = localStorage.getItem("token");
   const api = axios.create({
-    baseURL: 'https://safar-bus-booking-system.onrender.com',
+    baseURL: 'https://safar-backend-vazn.onrender.com',
     headers: { 'x-access-token': token }
   });
 
@@ -85,7 +85,7 @@ const subject=`Your Ticket Booking Confirmation - PNR Number ${pnr}`
 const gmail = localStorage.getItem('Gmail');
 
 
-      await axios.post('https://safar-bus-booking-system.onrender.com/sendGmail', {
+      await axios.post('https://safar-backend-vazn.onrender.com/sendGmail', {
       text: text,
       gmail: gmail,
       Subject: subject

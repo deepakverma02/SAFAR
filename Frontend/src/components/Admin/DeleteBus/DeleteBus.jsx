@@ -11,7 +11,7 @@ const DeleteBusForm = () => {
 
   const token = localStorage.getItem('token');
   const api = axios.create({
-    baseURL: 'https://safar-bus-booking-system.onrender.com',
+    baseURL: 'https://safar-backend-vazn.onrender.com',
     headers: {
       'x-access-token': token,
     },

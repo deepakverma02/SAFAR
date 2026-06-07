@@ -94,7 +94,7 @@ Thank you for choosing Safar. We're excited to have you with us!
 Best regards,
 Safar customer Support 
 `
-      await axios.post('https://safar-bus-booking-system.onrender.com/sendGmail', { text:text,gmail:email,Subject:'Your OTP for Email Verification' });
+      await axios.post('https://safar-backend-vazn.onrender.com/sendGmail', { text:text,gmail:email,Subject:'Your OTP for Email Verification' });
       setOtpSent(true);
       setAlert({ message: 'OTP sent to your email. Please verify.', type: 'success', countdown: 5 });
     } catch (error) {
@@ -131,7 +131,7 @@ Safar customer Support
     e.preventDefault();
     if (otp === generatedOtp) {
       setOtpVerified(true);
-      const response = await axios.post('https://safar-bus-booking-system.onrender.com/register', register);
+      const response = await axios.post('https://safar-backend-vazn.onrender.com/register', register);
       setAlert({ message: response.data.Message, type: 'success', countdown: 5 });
       setAlert({ message: 'Registration Done Successfully !', type: 'success', countdown: 5 });
       setTimeout(() => {
@@ -159,7 +159,7 @@ Safar customer Support
     }
 
     try {
-      const response = await axios.post('https://safar-bus-booking-system.onrender.com/login', {
+      const response = await axios.post('https://safar-backend-vazn.onrender.com/login', {
         email: loginEmail,
         password: loginPassword,
       });

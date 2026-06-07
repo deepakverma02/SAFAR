@@ -12,7 +12,7 @@ export default function PNRStatus() {
         
         try {
             // Post request to fetch passenger details
-            const response = await axios.post('https://safar-bus-booking-system.onrender.com/Ticketstatus', { PnrNumber: pnrNumber });
+            const response = await axios.post('https://safar-backend-vazn.onrender.com/Ticketstatus', { PnrNumber: pnrNumber });
             console.log(response.data);
             if (response) {
                 const passengerArray = response.data;

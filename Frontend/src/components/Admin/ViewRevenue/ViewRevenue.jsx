@@ -30,7 +30,7 @@ const ViewRevenueForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://safar-bus-booking-system.onrender.com/viewRevenu', {
+      const response = await axios.post('https://safar-backend-vazn.onrender.com/viewRevenu', {
         startdate: formData.startDate,
         enddate: formData.endDate,
         busNumber: formData.busNumber

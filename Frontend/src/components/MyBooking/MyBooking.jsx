@@ -16,7 +16,7 @@
         useEffect(() => {
             const fetchBookings = async () => {
                 try {
-                    const response = await axios.post('https://safar-bus-booking-system.onrender.com/myBooking', { userid: userid });
+                    const response = await axios.post('https://safar-backend-vazn.onrender.com/myBooking', { userid: userid });
                     const fetchedBookings = response.data;
 
                     // Automatically delete bookings without passengers
@@ -27,7 +27,7 @@
                     }
 
                     // Refetch bookings after potentially deleting empty ones
-                    const updatedResponse = await axios.post('https://safar-bus-booking-system.onrender.com/myBooking', { userid: userid });
+                    const updatedResponse = await axios.post('https://safar-backend-vazn.onrender.com/myBooking', { userid: userid });
                     setBookings(updatedResponse.data);
                 } catch (error) {
                     console.error('Error fetching bookings:', error);
@@ -40,7 +40,7 @@
 
         const handleDeleteEmptyBooking = async (bookingId) => {
             try {
-                await axios.post("https://safar-bus-booking-system.onrender.com/deleteAllticket", { "userid": bookingId });
+                await axios.post("https://safar-backend-vazn.onrender.com/deleteAllticket", { "userid": bookingId });
                 console.log(`Deleted booking with ID ${bookingId} because it had no passengers.`);
             } catch (error) {
                 console.error(`Failed to delete empty booking with ID ${bookingId}:`, error);
@@ -52,7 +52,7 @@
                 message: "Do you want to cancel this ticket?",
                 onConfirm: async () => {
                     try {
-                        await axios.post("https://safar-bus-booking-system.onrender.com/deletemybooking", {
+                        await axios.post("https://safar-backend-vazn.onrender.com/deletemybooking", {
                             "_id": passengerId,
                             "bookingid": bookingId
                         });
@@ -60,7 +60,7 @@
                         setShowAlert("Your refund will be settled in your account shortly.");
 
                         // Refetch the bookings to update the UI
-                        const response = await axios.post('https://safar-bus-booking-system.onrender.com/myBooking', { userid: userid });
+                        const response = await axios.post('https://safar-backend-vazn.onrender.com/myBooking', { userid: userid });
                         setBookings(response.data);
                         window.location.reload();
                     } catch (error) {
@@ -78,12 +78,12 @@
                 onConfirm: async () => {
                     try {
                         // Call API to cancel all passengers for this booking
-                        await axios.post("https://safar-bus-booking-system.onrender.com/deleteAllticket", { "userid": bookingId });
+                        await axios.post("https://safar-backend-vazn.onrender.com/deleteAllticket", { "userid": bookingId });
 
                         setShowAlert("All tickets under this booking have been canceled.");
 
                         // Refetch the bookings to update the UI
-                        const response = await axios.post('https://safar-bus-booking-system.onrender.com/myBooking', { userid: userid });
+                        const response = await axios.post('https://safar-backend-vazn.onrender.com/myBooking', { userid: userid });
                         setBookings(response.data);
                     } catch (error) {
                         console.error('Error canceling all passengers:', error);
@@ -295,7 +295,7 @@
 
         const handleSubmitReview = async (bookingId) => {
             try {
-                await axios.post("https://safar-bus-booking-system.onrender.com/review", { name: username, review: reviews[bookingId] });
+                await axios.post("https://safar-backend-vazn.onrender.com/review", { name: username, review: reviews[bookingId] });
                 setShowAlert("Thank you for your review!");
             } catch (error) {
                 console.error('Error submitting review:', error);
